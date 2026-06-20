@@ -1,92 +1,117 @@
 # The Saudi Storybook
 
-A chapter-based Django web application that presents a narrative journey through Saudi Arabia, including its land, people, traditions, cities, royal family, future, legacy, and celebrations.
+The Saudi Storybook is a chapter-based Django project that presents a visual journey through Saudi Arabia. Each chapter focuses on a different theme, from the land and people to traditions, cities, the royal family, the future, legacy, and celebrations.
 
-## Table of Contents
+## Highlights
 
-1. [Project Overview](#project-overview)
-2. [Key Features](#key-features)
-3. [Tech Stack](#tech-stack)
-4. [Getting Started](#getting-started)
-5. [Routing Map](#routing-map)
+- Chapter-based storytelling with dedicated pages for each Saudi theme.
+- Shared layout and styling for a consistent reading experience.
+- Light and dark mode support through a simple cookie-based switch.
+- Static image collections organized by chapter.
+- Straightforward server-rendered pages with minimal complexity.
 
-## Project Overview
+## Screenshots
 
-The Saudi Storybook is built as a server-rendered Django site with one main app (`main`) and chapter-specific pages rendered from templates. The home page acts as a table of contents, and each chapter route maps to its own dedicated view and template.
+![Home page preview](./assets/images/home.png)
+
+![Chapter preview](./assets/images/land.png)
 
 ## Key Features
 
-- Server-rendered Django pages for simple, maintainable content delivery.
-- Eight chapter pages with clear URL-based navigation.
-- Shared base template for consistent page layout.
-- Static assets organization for CSS and chapter-specific images.
-- Light/Dark mode preference using a cookie and dedicated mode-switch route.
+### Story Chapters
+- Explore eight curated chapters: land, people, traditions, cities, royal family, future, legacy, and celebrations.
+- Navigate each chapter through a dedicated route and template.
+
+### Shared Experience
+- Use a common base template to keep navigation and layout consistent.
+- Keep the design simple and maintainable with server-rendered Django views.
+
+### Theme Switching
+- Switch between light and dark mode with the `mode/<mode>/` route.
+- Persist the selected theme in a cookie for a smoother return visit.
+
+### Static Assets
+- Organize chapter imagery under `main/static/images/`.
+- Keep CSS in one place for easy styling updates.
 
 ## Tech Stack
 
 - Python 3.12+ (recommended)
 - Django 6.0.3
-- SQLite (default development database)
-- Bootstrap 5.3.3 (via CDN)
+- SQLite for local development
+- Bootstrap 5.3.3 via CDN
+- Custom CSS for page styling
 
-Dependencies are listed in `requirements.txt`.
+Dependencies are listed in [requirements.txt](requirements.txt).
 
 ## Getting Started
 
-### 1. Clone the repository
+### Prerequisites
+
+- Python 3.12 or newer
+- A virtual environment
+
+### Install
 
 ```bash
 git clone https://github.com/FadhelAlmalki/the-saudi-storybook.git
-cd TheSaudiStorybook
-```
-
-### 2. Create and activate a virtual environment
-
-Windows (Git Bash):
-
-```bash
+cd the-saudi-storybook
 python -m venv venv
-source venv/Scripts/activate
 ```
+
+Activate the environment:
 
 Windows (PowerShell):
 
 ```powershell
-python -m venv venv
 .\venv\Scripts\Activate.ps1
+```
+
+Windows (Git Bash):
+
+```bash
+source venv/Scripts/activate
 ```
 
 macOS/Linux:
 
 ```bash
-python3 -m venv venv
 source venv/bin/activate
 ```
 
-### 3. Install dependencies
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run database migrations
+### Run Locally
 
 ```bash
 cd TheSaudiStorybook
 python manage.py migrate
-```
-
-### 5. Start the development server
-
-```bash
 python manage.py runserver
 ```
 
-Open your browser at:
+Open the app at:
 
 ```text
 http://127.0.0.1:8000/
 ```
+
+## Project Structure
+
+- `main`: app logic, routes, and chapter views.
+- `main/templates/main`: base template and chapter pages.
+- `main/static/css`: shared styling for the site.
+- `main/static/images`: chapter image folders.
+- `TheSaudiStorybook`: project settings, root URLs, and ASGI/WSGI entry points.
+
+## Journey Summary
+
+- Visitor journey: open the home page, choose a chapter, and move through the story of Saudi Arabia.
+- Reading journey: follow the chapter order or jump directly to a specific theme.
+- Theme journey: switch between light and dark mode without losing the current page.
 
 ## Routing Map
 
